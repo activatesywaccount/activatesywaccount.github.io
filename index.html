@@ -133,6 +133,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 14px 0;
+      gap: 16px;
     }
 
     .logo {
@@ -165,6 +166,11 @@
       color: var(--text-muted);
     }
 
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav.main-nav a {
       margin-left: 18px;
       font-size: 14px;
@@ -174,6 +180,25 @@
 
     nav.main-nav a:hover {
       color: var(--blue);
+    }
+
+    .nav-cta {
+      margin-left: 20px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff !important;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-soft);
     }
 
     .hero {
@@ -214,7 +239,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .pill {
@@ -224,6 +249,27 @@
       font-size: 12px;
       color: var(--blue-soft);
       background: #ffffff;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      margin-top: 4px;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-soft);
     }
 
     .hero-card {
@@ -339,6 +385,140 @@
       text-decoration: underline;
     }
 
+    /* Chatbot styles */
+    .chatbot-toggle {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      border: none;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .chatbot-toggle:hover {
+      background: var(--blue-soft);
+    }
+
+    .chatbot-window {
+      position: fixed;
+      right: 20px;
+      bottom: 80px;
+      width: 320px;
+      max-width: calc(100% - 40px);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.38);
+      border: 1px solid var(--border-soft);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .chatbot-header {
+      background: var(--blue);
+      color: #ffffff;
+      padding: 10px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chatbot-header small {
+      font-weight: 400;
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .chatbot-close {
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .chatbot-body {
+      padding: 10px;
+      max-height: 260px;
+      overflow-y: auto;
+      background: #f9fafb;
+    }
+
+    .chat-msg {
+      margin-bottom: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .chat-msg.bot {
+      text-align: left;
+    }
+
+    .chat-msg.user {
+      text-align: right;
+      color: #111827;
+    }
+
+    .chat-msg .bubble {
+      display: inline-block;
+      padding: 7px 9px;
+      border-radius: 10px;
+      max-width: 90%;
+    }
+
+    .chat-msg.bot .bubble {
+      background: #e5edff;
+      color: #111827;
+    }
+
+    .chat-msg.user .bubble {
+      background: var(--blue);
+      color: #ffffff;
+    }
+
+    .chatbot-footer {
+      padding: 8px;
+      border-top: 1px solid var(--border-soft);
+      background: #ffffff;
+      display: flex;
+      gap: 6px;
+    }
+
+    .chatbot-input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 6px 10px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .chatbot-send {
+      border-radius: 999px;
+      border: none;
+      padding: 6px 10px;
+      background: var(--blue);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .chatbot-send:hover {
+      background: var(--blue-soft);
+    }
+
     @media (max-width: 768px) {
       .hero-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -379,6 +559,8 @@
           <a href="#activation">Card Activation</a>
           <a href="#faq">FAQ</a>
           <a href="#disclaimer">Disclaimer</a>
+          <!-- Navbar CTA button -->
+          <a href="#activation" class="nav-cta">Get Activation Help</a>
         </nav>
       </div>
     </div>
@@ -403,6 +585,9 @@
               <span class="pill">activate.syw.account.com</span>
               <span class="pill">SYW credit card activation</span>
             </div>
+            <!-- Hero primary button -->
+            <a href="#activation" class="btn-primary">View Activation Steps</a>
+
             <div class="note">
               This website is an independent information resource. Always check that you are on the official
               bank or card issuer website before entering your personal or card details.
@@ -611,9 +796,146 @@
     </div>
   </footer>
 
+  <!-- Chatbot UI -->
+  <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open help chat">?</button>
+
+  <div class="chatbot-window" id="chatbotWindow" aria-live="polite">
+    <div class="chatbot-header">
+      <div>
+        SYW Help Chat<br />
+        <small>Basic guide – not official support</small>
+      </div>
+      <div class="chatbot-close" id="chatbotClose">&times;</div>
+    </div>
+    <div class="chatbot-body" id="chatbotBody">
+      <div class="chat-msg bot">
+        <div class="bubble">
+          Hi! Ask me about <strong>syw.accountonline.com login</strong> or <strong>activate SYW account</strong>.<br />
+          You can also read the full guide here: 
+          <a href="https://activatesywaccount.github.io/" target="_blank" rel="noopener noreferrer">
+            activatesywaccount.github.io
+          </a>.
+        </div>
+      </div>
+    </div>
+    <div class="chatbot-footer">
+      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your question..." />
+      <button class="chatbot-send" id="chatbotSend">Send</button>
+    </div>
+  </div>
+
   <script>
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple chatbot logic – keyword-based answers
+    (function() {
+      const siteLinkHtml = 
+        ' For the full detailed guide, visit ' +
+        '<a href="https://activatesywaccount.github.io/" target="_blank" rel="noopener noreferrer">' +
+        'https://activatesywaccount.github.io/</a>.';
+
+      const faqData = [
+        {
+          keywords: ['login', 'syw.accountonline.com', 'sign in', 'sign on'],
+          answer: 
+            'To log in, go to syw.accountonline.com, enter your User ID and Password, and click Sign On. ' +
+            'If you are new, use the Register / Create Account option to set up online access.' +
+            siteLinkHtml
+        },
+        {
+          keywords: ['activate', 'card', 'activation', 'activate.syw.account'],
+          answer:
+            'To activate your SYW credit card, use the activation URL printed on your card (such as activate.syw.account or activate.syw.account.com), ' +
+            'or sign in at syw.accountonline.com and look for the Activate Card or Card Services section in your account dashboard.' +
+            siteLinkHtml
+        },
+        {
+          keywords: ['forgot', 'password', 'user id', 'reset'],
+          answer:
+            'On the syw.accountonline.com login page, use the Forgot User ID or Forgot Password links and follow the prompts. ' +
+            'You will usually confirm your card and personal details before creating a new password.' +
+            siteLinkHtml
+        },
+        {
+          keywords: ['not work', 'error', 'problem', 'issue'],
+          answer:
+            'If the site is not working, check the URL, clear your browser cache, try a different browser, or disable VPN/proxy. ' +
+            'If issues continue, use the phone number on the back of your card for official support.' +
+            siteLinkHtml
+        },
+        {
+          keywords: ['official', 'affiliated', 'real site', 'fake', 'phishing'],
+          answer:
+            'This website is an independent help guide and not affiliated with any bank or the Shop Your Way program. ' +
+            'Always enter card details only on the official website printed on your card or statement.' +
+            siteLinkHtml
+        }
+      ];
+
+      const toggleBtn = document.getElementById('chatbotToggle');
+      const chatWindow = document.getElementById('chatbotWindow');
+      const closeBtn = document.getElementById('chatbotClose');
+      const bodyEl = document.getElementById('chatbotBody');
+      const inputEl = document.getElementById('chatbotInput');
+      const sendBtn = document.getElementById('chatbotSend');
+
+      function appendMessage(text, sender) {
+        const msg = document.createElement('div');
+        msg.className = 'chat-msg ' + sender;
+
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubble.innerHTML = text;
+
+        msg.appendChild(bubble);
+        bodyEl.appendChild(msg);
+        bodyEl.scrollTop = bodyEl.scrollHeight;
+      }
+
+      function getBotAnswer(userText) {
+        const t = userText.toLowerCase();
+        for (const item of faqData) {
+          if (item.keywords.some(k => t.includes(k))) {
+            return item.answer;
+          }
+        }
+        return (
+          "I’m not sure about that exact question, but I can help with syw.accountonline.com login and SYW card activation basics." +
+          siteLinkHtml
+        );
+      }
+
+      function handleSend() {
+        const text = inputEl.value.trim();
+        if (!text) return;
+
+        appendMessage(text, 'user');
+        inputEl.value = '';
+
+        const answer = getBotAnswer(text);
+        setTimeout(() => {
+          appendMessage(answer, 'bot');
+        }, 200);
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+      });
+
+      closeBtn.addEventListener('click', () => {
+        chatWindow.style.display = 'none';
+      });
+
+      sendBtn.addEventListener('click', handleSend);
+
+      inputEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleSend();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
